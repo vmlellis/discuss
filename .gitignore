@@ -35,3 +35,6 @@ npm-debug.log
 
 # Ignore ElixirLS
 /.elixir_ls/
+
+# Sensitive keys
+.env
