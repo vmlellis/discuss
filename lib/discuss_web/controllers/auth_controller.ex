@@ -22,7 +22,7 @@ defmodule DiscussWeb.AuthController do
   end
 
   defp signin(conn, user_params) do
-    case Accounts.create_or_update_user(user_params) do
+    case Accounts.find_or_create_user(user_params) do
       {:ok, user} ->
         conn
         |> put_flash(:info, "Welcome back!")

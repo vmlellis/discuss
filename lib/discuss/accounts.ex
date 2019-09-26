@@ -102,7 +102,7 @@ defmodule Discuss.Accounts do
     User.changeset(user, %{})
   end
 
-  def create_or_update_user(attrs \\ %{}) do
+  def find_or_create_user(attrs \\ %{}) do
     changeset = User.changeset(%User{}, attrs)
     case Repo.get_by(User, email: changeset.changes.email) do
       nil -> create_user(attrs)
