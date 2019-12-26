@@ -18,7 +18,7 @@ defmodule DiscussWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/topics", TopicController, except: [:show]
+    resources "/topics", TopicController
   end
 
   scope "/auth", DiscussWeb do
